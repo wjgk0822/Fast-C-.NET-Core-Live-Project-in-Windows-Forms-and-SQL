@@ -16,5 +16,15 @@ namespace WinFormsApp3
         {
             InitializeComponent();
         }
+
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void min_btn_Click(object sender, EventArgs e)
+        {
+            this.WindowState= FormWindowState.Minimized;
+        }
     }
 }
