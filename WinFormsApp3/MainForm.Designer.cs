@@ -29,17 +29,24 @@
         private void InitializeComponent()
         {
             this.top_panel = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.min_btn = new System.Windows.Forms.Button();
             this.close_btn = new System.Windows.Forms.Button();
             this.side_panel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.day_week_lbl = new System.Windows.Forms.Label();
+            this.day_month_lbl = new System.Windows.Forms.Label();
+            this.month_name_lbl = new System.Windows.Forms.Label();
+            this.Year_num_lbl = new System.Windows.Forms.Label();
             this.bottom_panel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.top_panel.SuspendLayout();
+            this.side_panel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +63,58 @@
             this.top_panel.Name = "top_panel";
             this.top_panel.Size = new System.Drawing.Size(948, 75);
             this.top_panel.TabIndex = 1;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::WinFormsApp3.Properties.Resources.butt_background;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Font = new System.Drawing.Font("휴먼둥근헤드라인", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button4.Image = global::WinFormsApp3.Properties.Resources.help;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button4.Location = new System.Drawing.Point(581, 10);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(194, 62);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Help F5";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::WinFormsApp3.Properties.Resources.butt_background;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Font = new System.Drawing.Font("휴먼둥근헤드라인", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.Image = global::WinFormsApp3.Properties.Resources.tools;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.Location = new System.Drawing.Point(447, 10);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(128, 62);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Tools F4";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::WinFormsApp3.Properties.Resources.butt_background;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Font = new System.Drawing.Font("휴먼둥근헤드라인", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Image = global::WinFormsApp3.Properties.Resources.report;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.Location = new System.Drawing.Point(265, 10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(176, 62);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Reports F3";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -103,11 +162,71 @@
             // side_panel
             // 
             this.side_panel.BackColor = System.Drawing.SystemColors.GrayText;
+            this.side_panel.Controls.Add(this.panel1);
             this.side_panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.side_panel.Location = new System.Drawing.Point(0, 0);
             this.side_panel.Name = "side_panel";
             this.side_panel.Size = new System.Drawing.Size(180, 652);
             this.side_panel.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::WinFormsApp3.Properties.Resources.calendar;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.day_week_lbl);
+            this.panel1.Controls.Add(this.day_month_lbl);
+            this.panel1.Controls.Add(this.month_name_lbl);
+            this.panel1.Controls.Add(this.Year_num_lbl);
+            this.panel1.Location = new System.Drawing.Point(12, 173);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(165, 152);
+            this.panel1.TabIndex = 0;
+            // 
+            // day_week_lbl
+            // 
+            this.day_week_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.day_week_lbl.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.day_week_lbl.ForeColor = System.Drawing.Color.Black;
+            this.day_week_lbl.Location = new System.Drawing.Point(15, 105);
+            this.day_week_lbl.Name = "day_week_lbl";
+            this.day_week_lbl.Size = new System.Drawing.Size(136, 34);
+            this.day_week_lbl.TabIndex = 8;
+            this.day_week_lbl.Text = "Sunday";
+            this.day_week_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // day_month_lbl
+            // 
+            this.day_month_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.day_month_lbl.Font = new System.Drawing.Font("맑은 고딕", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.day_month_lbl.ForeColor = System.Drawing.Color.Black;
+            this.day_month_lbl.Location = new System.Drawing.Point(46, 63);
+            this.day_month_lbl.Name = "day_month_lbl";
+            this.day_month_lbl.Size = new System.Drawing.Size(59, 42);
+            this.day_month_lbl.TabIndex = 7;
+            this.day_month_lbl.Text = "23";
+            this.day_month_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // month_name_lbl
+            // 
+            this.month_name_lbl.AutoSize = true;
+            this.month_name_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.month_name_lbl.ForeColor = System.Drawing.Color.White;
+            this.month_name_lbl.Location = new System.Drawing.Point(100, 29);
+            this.month_name_lbl.Name = "month_name_lbl";
+            this.month_name_lbl.Size = new System.Drawing.Size(49, 25);
+            this.month_name_lbl.TabIndex = 6;
+            this.month_name_lbl.Text = "April";
+            // 
+            // Year_num_lbl
+            // 
+            this.Year_num_lbl.AutoSize = true;
+            this.Year_num_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.Year_num_lbl.ForeColor = System.Drawing.Color.White;
+            this.Year_num_lbl.Location = new System.Drawing.Point(15, 29);
+            this.Year_num_lbl.Name = "Year_num_lbl";
+            this.Year_num_lbl.Size = new System.Drawing.Size(52, 25);
+            this.Year_num_lbl.TabIndex = 5;
+            this.Year_num_lbl.Text = "2022";
             // 
             // bottom_panel
             // 
@@ -119,57 +238,18 @@
             this.bottom_panel.Size = new System.Drawing.Size(948, 40);
             this.bottom_panel.TabIndex = 3;
             // 
-            // button2
+            // button6
             // 
-            this.button2.BackgroundImage = global::WinFormsApp3.Properties.Resources.butt_background;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("휴먼둥근헤드라인", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Image = global::WinFormsApp3.Properties.Resources.report;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(265, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 62);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Reports F3";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::WinFormsApp3.Properties.Resources.butt_background;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Font = new System.Drawing.Font("휴먼둥근헤드라인", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Image = global::WinFormsApp3.Properties.Resources.tools;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(447, 10);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 62);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Tools F4";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = global::WinFormsApp3.Properties.Resources.butt_background;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Font = new System.Drawing.Font("휴먼둥근헤드라인", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Image = global::WinFormsApp3.Properties.Resources.help;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(581, 10);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(194, 62);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Help F5";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.BackgroundImage = global::WinFormsApp3.Properties.Resources.butt_background;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.Image = global::WinFormsApp3.Properties.Resources.calc_butt;
+            this.button6.Location = new System.Drawing.Point(688, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(68, 34);
+            this.button6.TabIndex = 1;
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -186,19 +266,6 @@
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.BackgroundImage = global::WinFormsApp3.Properties.Resources.butt_background;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Image = global::WinFormsApp3.Properties.Resources.calc_butt;
-            this.button6.Location = new System.Drawing.Point(688, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(68, 34);
-            this.button6.TabIndex = 1;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -214,8 +281,12 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.top_panel.ResumeLayout(false);
             this.top_panel.PerformLayout();
+            this.side_panel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.bottom_panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -234,5 +305,10 @@
         private Button button2;
         private Button button5;
         private Button button6;
+        private Panel panel1;
+        private Label day_week_lbl;
+        private Label day_month_lbl;
+        private Label month_name_lbl;
+        private Label Year_num_lbl;
     }
 }
