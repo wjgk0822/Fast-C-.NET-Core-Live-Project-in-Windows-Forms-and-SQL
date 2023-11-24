@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp3", "WinFormsApp3\WinFormsApp3.csproj", "{D522FC0C-BD28-415A-8CBC-03BFD2CFE94F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp3", "WinFormsApp3\WinFormsApp3.csproj", "{D522FC0C-BD28-415A-8CBC-03BFD2CFE94F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalogClock", "AnalogClock.NET6\AnalogClock.csproj", "{515CA322-A820-43AA-B316-743AFD255122}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D522FC0C-BD28-415A-8CBC-03BFD2CFE94F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D522FC0C-BD28-415A-8CBC-03BFD2CFE94F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D522FC0C-BD28-415A-8CBC-03BFD2CFE94F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{515CA322-A820-43AA-B316-743AFD255122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{515CA322-A820-43AA-B316-743AFD255122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{515CA322-A820-43AA-B316-743AFD255122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{515CA322-A820-43AA-B316-743AFD255122}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
