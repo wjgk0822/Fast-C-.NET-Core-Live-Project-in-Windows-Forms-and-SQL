@@ -34,8 +34,9 @@
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("My Letters", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("All folders", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("All folders", 2, 2, new System.Windows.Forms.TreeNode[] {
             treeNode3});
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.top_panel = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -53,11 +54,15 @@
             this.month_name_lbl = new System.Windows.Forms.Label();
             this.Year_num_lbl = new System.Windows.Forms.Label();
             this.bottom_panel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tree_panel = new System.Windows.Forms.Panel();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.collapse_btn = new System.Windows.Forms.Button();
+            this.expand_btn = new System.Windows.Forms.Button();
+            this.main_Tree_view = new System.Windows.Forms.TreeView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.top_panel.SuspendLayout();
             this.side_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.User_img_pic)).BeginInit();
@@ -305,6 +310,7 @@
             // 
             // bottom_panel
             // 
+            this.bottom_panel.Controls.Add(this.button1);
             this.bottom_panel.Controls.Add(this.button6);
             this.bottom_panel.Controls.Add(this.button5);
             this.bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -312,6 +318,15 @@
             this.bottom_panel.Name = "bottom_panel";
             this.bottom_panel.Size = new System.Drawing.Size(948, 40);
             this.bottom_panel.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(196, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 34);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
@@ -350,29 +365,74 @@
             // tree_panel
             // 
             this.tree_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tree_panel.Controls.Add(this.treeView1);
+            this.tree_panel.Controls.Add(this.collapse_btn);
+            this.tree_panel.Controls.Add(this.expand_btn);
+            this.tree_panel.Controls.Add(this.main_Tree_view);
             this.tree_panel.Location = new System.Drawing.Point(192, 81);
             this.tree_panel.Name = "tree_panel";
             this.tree_panel.Size = new System.Drawing.Size(270, 404);
             this.tree_panel.TabIndex = 5;
             this.tree_panel.Visible = false;
             // 
-            // treeView1
+            // collapse_btn
             // 
-            this.treeView1.Location = new System.Drawing.Point(3, 3);
-            this.treeView1.Name = "treeView1";
+            this.collapse_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.collapse_btn.Image = global::WinFormsApp3.Properties.Resources.collapse;
+            this.collapse_btn.Location = new System.Drawing.Point(222, 3);
+            this.collapse_btn.Name = "collapse_btn";
+            this.collapse_btn.Size = new System.Drawing.Size(43, 29);
+            this.collapse_btn.TabIndex = 8;
+            this.collapse_btn.UseVisualStyleBackColor = true;
+            this.collapse_btn.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // expand_btn
+            // 
+            this.expand_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.expand_btn.Image = global::WinFormsApp3.Properties.Resources.expand;
+            this.expand_btn.Location = new System.Drawing.Point(173, 3);
+            this.expand_btn.Name = "expand_btn";
+            this.expand_btn.Size = new System.Drawing.Size(43, 29);
+            this.expand_btn.TabIndex = 7;
+            this.expand_btn.UseVisualStyleBackColor = true;
+            this.expand_btn.Click += new System.EventHandler(this.expand_btn_Click);
+            // 
+            // main_Tree_view
+            // 
+            this.main_Tree_view.Font = new System.Drawing.Font("맑은 고딕", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.main_Tree_view.ImageIndex = 0;
+            this.main_Tree_view.ImageList = this.imageList1;
+            this.main_Tree_view.Location = new System.Drawing.Point(3, 3);
+            this.main_Tree_view.Name = "main_Tree_view";
+            treeNode1.ImageKey = "review.png";
             treeNode1.Name = "Incoming_letter";
+            treeNode1.SelectedImageKey = "review.png";
             treeNode1.Text = "Incoming letter";
+            treeNode2.ImageKey = "kToolStripButton2.Image.png";
             treeNode2.Name = "Outgoing_letter";
+            treeNode2.SelectedImageKey = "kToolStripButton2.Image.png";
             treeNode2.Text = "Outgoing letter";
             treeNode3.Name = "My_Letters";
+            treeNode3.SelectedImageIndex = 0;
             treeNode3.Text = "My Letters";
+            treeNode4.ImageIndex = 2;
             treeNode4.Name = "All folders";
+            treeNode4.SelectedImageIndex = 2;
             treeNode4.Text = "All folders";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            this.main_Tree_view.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode4});
-            this.treeView1.Size = new System.Drawing.Size(262, 396);
-            this.treeView1.TabIndex = 0;
+            this.main_Tree_view.SelectedImageIndex = 0;
+            this.main_Tree_view.Size = new System.Drawing.Size(262, 396);
+            this.main_Tree_view.TabIndex = 0;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "dep_1.png");
+            this.imageList1.Images.SetKeyName(1, "kToolStripButton2.Image.png");
+            this.imageList1.Images.SetKeyName(2, "RadMenuItem2.png");
+            this.imageList1.Images.SetKeyName(3, "review.png");
             // 
             // MainForm
             // 
@@ -426,6 +486,10 @@
         private PictureBox User_img_pic;
         private Label KJH;
         private Panel tree_panel;
-        private TreeView treeView1;
+        private TreeView main_Tree_view;
+        private Button button1;
+        private Button expand_btn;
+        private Button collapse_btn;
+        private ImageList imageList1;
     }
 }

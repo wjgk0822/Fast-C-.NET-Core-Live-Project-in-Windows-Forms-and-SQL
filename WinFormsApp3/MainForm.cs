@@ -42,9 +42,14 @@ namespace WinFormsApp3
             //this.month_name_lbl.Text = month_name;
             //this.day_month_lbl.Text=System.DateTime.Now.Day.ToString();
             //this.day_week_lbl.Text=System.DateTime.Now.DayOfWeek.ToString();
+            //----------------------load date--------------
             get_date_cal();
 
+            //-----------------Tree view----------------
+
             this.tree_panel.Visible = false;
+
+            this.main_Tree_view.ExpandAll();
 
 
         }
@@ -71,6 +76,16 @@ namespace WinFormsApp3
             this.tree_panel.Visible =! this.tree_panel.Visible;
 
 
+        }
+
+        private void expand_btn_Click(object sender, EventArgs e)
+        {
+            this.main_Tree_view.ExpandAll();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.main_Tree_view.CollapseAll();
         }
     }
 }
