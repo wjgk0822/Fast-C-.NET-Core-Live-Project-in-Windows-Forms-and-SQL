@@ -47,10 +47,13 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.KJH = new System.Windows.Forms.Label();
+            this.User_img_pic = new System.Windows.Forms.PictureBox();
             this.top_panel.SuspendLayout();
             this.side_panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.User_img_pic)).BeginInit();
             this.SuspendLayout();
             // 
             // top_panel
@@ -165,6 +168,8 @@
             // side_panel
             // 
             this.side_panel.BackColor = System.Drawing.SystemColors.GrayText;
+            this.side_panel.Controls.Add(this.User_img_pic);
+            this.side_panel.Controls.Add(this.KJH);
             this.side_panel.Controls.Add(this.analogClock1);
             this.side_panel.Controls.Add(this.panel1);
             this.side_panel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -310,6 +315,27 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // KJH
+            // 
+            this.KJH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.KJH.Location = new System.Drawing.Point(12, 558);
+            this.KJH.Name = "KJH";
+            this.KJH.Size = new System.Drawing.Size(149, 38);
+            this.KJH.TabIndex = 5;
+            this.KJH.Text = "KJH";
+            this.KJH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // User_img_pic
+            // 
+            this.User_img_pic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.User_img_pic.Image = global::WinFormsApp3.Properties.Resources.Default_user;
+            this.User_img_pic.Location = new System.Drawing.Point(13, 393);
+            this.User_img_pic.Name = "User_img_pic";
+            this.User_img_pic.Size = new System.Drawing.Size(150, 162);
+            this.User_img_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.User_img_pic.TabIndex = 5;
+            this.User_img_pic.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -332,6 +358,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.bottom_panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.User_img_pic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,5 +383,7 @@
         private Label Year_num_lbl;
         private AnalogClock.AnalogClock analogClock1;
         private System.Windows.Forms.Timer timer1;
+        private PictureBox User_img_pic;
+        private Label KJH;
     }
 }
