@@ -29,14 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Incoming letter");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Outgoing letter");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("My Letters", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("All folders", new System.Windows.Forms.TreeNode[] {
+            treeNode3});
             this.top_panel = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Data_entry_btn = new System.Windows.Forms.Button();
             this.min_btn = new System.Windows.Forms.Button();
             this.close_btn = new System.Windows.Forms.Button();
             this.side_panel = new System.Windows.Forms.Panel();
+            this.User_img_pic = new System.Windows.Forms.PictureBox();
+            this.KJH = new System.Windows.Forms.Label();
             this.analogClock1 = new AnalogClock.AnalogClock();
             this.panel1 = new System.Windows.Forms.Panel();
             this.day_week_lbl = new System.Windows.Forms.Label();
@@ -47,13 +56,14 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.KJH = new System.Windows.Forms.Label();
-            this.User_img_pic = new System.Windows.Forms.PictureBox();
+            this.tree_panel = new System.Windows.Forms.Panel();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.top_panel.SuspendLayout();
             this.side_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.User_img_pic)).BeginInit();
             this.panel1.SuspendLayout();
             this.bottom_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.User_img_pic)).BeginInit();
+            this.tree_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // top_panel
@@ -61,7 +71,7 @@
             this.top_panel.Controls.Add(this.button4);
             this.top_panel.Controls.Add(this.button3);
             this.top_panel.Controls.Add(this.button2);
-            this.top_panel.Controls.Add(this.button1);
+            this.top_panel.Controls.Add(this.Data_entry_btn);
             this.top_panel.Controls.Add(this.min_btn);
             this.top_panel.Controls.Add(this.close_btn);
             this.top_panel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -122,22 +132,23 @@
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // Data_entry_btn
             // 
-            this.button1.BackgroundImage = global::WinFormsApp3.Properties.Resources.butt_background;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("휴먼둥근헤드라인", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Image = global::WinFormsApp3.Properties.Resources.input;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(12, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 62);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Data Entry F2";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.Data_entry_btn.BackgroundImage = global::WinFormsApp3.Properties.Resources.butt_background;
+            this.Data_entry_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Data_entry_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Data_entry_btn.Font = new System.Drawing.Font("휴먼둥근헤드라인", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Data_entry_btn.Image = global::WinFormsApp3.Properties.Resources.input;
+            this.Data_entry_btn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Data_entry_btn.Location = new System.Drawing.Point(12, 10);
+            this.Data_entry_btn.Name = "Data_entry_btn";
+            this.Data_entry_btn.Size = new System.Drawing.Size(250, 62);
+            this.Data_entry_btn.TabIndex = 2;
+            this.Data_entry_btn.Text = "Data Entry F2";
+            this.Data_entry_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Data_entry_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Data_entry_btn.UseVisualStyleBackColor = true;
+            this.Data_entry_btn.Click += new System.EventHandler(this.Data_entry_btn_Click);
             // 
             // min_btn
             // 
@@ -177,6 +188,27 @@
             this.side_panel.Name = "side_panel";
             this.side_panel.Size = new System.Drawing.Size(180, 652);
             this.side_panel.TabIndex = 2;
+            // 
+            // User_img_pic
+            // 
+            this.User_img_pic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.User_img_pic.Image = global::WinFormsApp3.Properties.Resources.Default_user;
+            this.User_img_pic.Location = new System.Drawing.Point(13, 393);
+            this.User_img_pic.Name = "User_img_pic";
+            this.User_img_pic.Size = new System.Drawing.Size(150, 162);
+            this.User_img_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.User_img_pic.TabIndex = 5;
+            this.User_img_pic.TabStop = false;
+            // 
+            // KJH
+            // 
+            this.KJH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.KJH.Location = new System.Drawing.Point(12, 558);
+            this.KJH.Name = "KJH";
+            this.KJH.Size = new System.Drawing.Size(149, 38);
+            this.KJH.TabIndex = 5;
+            this.KJH.Text = "KJH";
+            this.KJH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // analogClock1
             // 
@@ -315,32 +347,39 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // KJH
+            // tree_panel
             // 
-            this.KJH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.KJH.Location = new System.Drawing.Point(12, 558);
-            this.KJH.Name = "KJH";
-            this.KJH.Size = new System.Drawing.Size(149, 38);
-            this.KJH.TabIndex = 5;
-            this.KJH.Text = "KJH";
-            this.KJH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tree_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tree_panel.Controls.Add(this.treeView1);
+            this.tree_panel.Location = new System.Drawing.Point(192, 81);
+            this.tree_panel.Name = "tree_panel";
+            this.tree_panel.Size = new System.Drawing.Size(270, 404);
+            this.tree_panel.TabIndex = 5;
+            this.tree_panel.Visible = false;
             // 
-            // User_img_pic
+            // treeView1
             // 
-            this.User_img_pic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.User_img_pic.Image = global::WinFormsApp3.Properties.Resources.Default_user;
-            this.User_img_pic.Location = new System.Drawing.Point(13, 393);
-            this.User_img_pic.Name = "User_img_pic";
-            this.User_img_pic.Size = new System.Drawing.Size(150, 162);
-            this.User_img_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.User_img_pic.TabIndex = 5;
-            this.User_img_pic.TabStop = false;
+            this.treeView1.Location = new System.Drawing.Point(3, 3);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "Incoming_letter";
+            treeNode1.Text = "Incoming letter";
+            treeNode2.Name = "Outgoing_letter";
+            treeNode2.Text = "Outgoing letter";
+            treeNode3.Name = "My_Letters";
+            treeNode3.Text = "My Letters";
+            treeNode4.Name = "All folders";
+            treeNode4.Text = "All folders";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode4});
+            this.treeView1.Size = new System.Drawing.Size(262, 396);
+            this.treeView1.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1128, 652);
+            this.Controls.Add(this.tree_panel);
             this.Controls.Add(this.bottom_panel);
             this.Controls.Add(this.top_panel);
             this.Controls.Add(this.side_panel);
@@ -355,10 +394,11 @@
             this.top_panel.ResumeLayout(false);
             this.top_panel.PerformLayout();
             this.side_panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.User_img_pic)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.bottom_panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.User_img_pic)).EndInit();
+            this.tree_panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -370,7 +410,7 @@
         private Panel bottom_panel;
         private Button close_btn;
         private Button min_btn;
-        private Button button1;
+        private Button Data_entry_btn;
         private Button button4;
         private Button button3;
         private Button button2;
@@ -385,5 +425,7 @@
         private System.Windows.Forms.Timer timer1;
         private PictureBox User_img_pic;
         private Label KJH;
+        private Panel tree_panel;
+        private TreeView treeView1;
     }
 }

@@ -44,6 +44,9 @@ namespace WinFormsApp3
             //this.day_week_lbl.Text=System.DateTime.Now.DayOfWeek.ToString();
             get_date_cal();
 
+            this.tree_panel.Visible = false;
+
+
         }
 
         void get_date_cal()
@@ -61,6 +64,13 @@ namespace WinFormsApp3
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.analogClock1.Time= System.DateTime.Now;
+        }
+
+        private void Data_entry_btn_Click(object sender, EventArgs e)
+        {
+            this.tree_panel.Visible =! this.tree_panel.Visible;
+
+
         }
     }
 }
